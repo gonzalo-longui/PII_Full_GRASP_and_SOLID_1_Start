@@ -35,7 +35,8 @@ namespace Full_GRASP_And_SOLID.Library
             return total;
         }
         //Principio Expert: Tiene toda la información que necesita para calcular su propio costo (porque tiene la lista de steps que tienen un método para hallar su costo)
-
+        //Entiendo que la parte II de este ejercicio intenta que saquemos el PrintRecipe a otra clase para que cumpla el SRP, pero
+        //como no es lo que se pide para la parte I lo dejo así.
         public void PrintRecipe()
         {
             Console.WriteLine($"Receta de {this.FinalProduct.Description}:");

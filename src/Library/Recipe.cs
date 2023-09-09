@@ -34,8 +34,7 @@ namespace Full_GRASP_And_SOLID.Library
             }
             return total;
         }
-        //Principio SRP: Tiene la única responsabilidad de saber el costo de sí mismo
-        //Principio Expert: Tiene toda la información que necesita para calcular su propio costo
+        //Principio Expert: Tiene toda la información que necesita para calcular su propio costo (porque tiene la lista de steps que tienen un método para hallar su costo)
 
         public void PrintRecipe()
         {

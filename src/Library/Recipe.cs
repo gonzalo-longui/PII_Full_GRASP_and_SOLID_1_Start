@@ -25,14 +25,27 @@ namespace Full_GRASP_And_SOLID.Library
             this.steps.Remove(step);
         }
 
+        public double GetProductionCost()
+        {
+            double total = 0;
+            foreach (Step step in steps)
+            {
+                total += step.GetSubtotal();
+            }
+            return total;
+        }
+        //Principio SRP: Tiene la única responsabilidad de saber el costo de sí mismo
+        //Principio Expert: Tiene toda la información que necesita para calcular su propio costo
+
         public void PrintRecipe()
         {
             Console.WriteLine($"Receta de {this.FinalProduct.Description}:");
             foreach (Step step in this.steps)
             {
-                Console.WriteLine($"{step.Quantity} de '{step.Input.Description}' " +
-                    $"usando '{step.Equipment.Description}' durante {step.Time}");
+                Console.WriteLine($"{step.Quantity} kg de '{step.Input.Description}' " +
+                    $"usando '{step.Equipment.Description}' durante {step.Time} segundos");
             }
+            Console.WriteLine($"Costo: ${Math.Round(GetProductionCost(),2)}");
         }
     }
 }
